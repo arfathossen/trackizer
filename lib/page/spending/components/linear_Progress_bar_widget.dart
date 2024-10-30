@@ -8,11 +8,11 @@ class LinearProgressBarWidget extends StatefulWidget {
   });
 
   @override
-  _LinearProgressBarWidgetState createState() =>
-      _LinearProgressBarWidgetState();
+  _linearProgressBarWidgetState createState() =>
+      _linearProgressBarWidgetState();
 }
 
-class _LinearProgressBarWidgetState extends State<LinearProgressBarWidget>
+class _linearProgressBarWidgetState extends State<LinearProgressBarWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;

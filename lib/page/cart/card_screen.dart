@@ -30,11 +30,10 @@ class _CardScreenState extends State<CardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Constants.bgColors,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           'Credit Cards',

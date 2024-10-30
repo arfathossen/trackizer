@@ -16,12 +16,15 @@ class SubscriptionDetails extends StatelessWidget {
             fontSize: 25,
           ),
         ),
+        const SizedBox(
+          height: 5,
+        ),
         Text(
           '\$5.99',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Constants.secondaryColor,
-            fontSize: 15,
+            fontSize: 14,
           ),
         ),
       ],

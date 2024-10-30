@@ -32,33 +32,31 @@ class _SwitchWidgetState extends State<SwitchWidget> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(shape: BoxShape.circle),
-                        child: Center(
-                          child: HugeIcon(
-                            icon: widget.icon,
-                            size: 24,
-                            color: Constants.secondaryColor,
-                          ),
-                        )),
-                    const SizedBox(
-                      width: 10.0,
+              Row(
+                children: [
+                  Container(
+                      width: 40,
+                      height: 40,
+                      decoration: const BoxDecoration(shape: BoxShape.circle),
+                      child: Center(
+                        child: HugeIcon(
+                          icon: widget.icon,
+                          size: 24,
+                          color: Constants.secondaryColor,
+                        ),
+                      )),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  Text(
+                    widget.title,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                      color: Constants.secondaryColor,
                     ),
-                    Text(
-                      widget.title,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w800,
-                        color: Constants.secondaryColor,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const Spacer(),
               CupertinoSwitch(

@@ -5,105 +5,135 @@ import 'package:flutter/material.dart';
 import 'package:trackizer_app/page/subscription_info/components/Logo_widget.dart';
 import 'package:trackizer_app/page/subscription_info/components/build_header.dart';
 import 'package:trackizer_app/page/subscription_info/components/dottedLine_circle_widget.dart';
+
 import 'package:trackizer_app/page/subscription_info/components/list_info_widget.dart';
 import 'package:trackizer_app/page/subscription_info/components/subscription_details.dart';
 import 'package:trackizer_app/page/welcome_screen/components/custom_button.widget.dart';
+import 'package:trackizer_app/shared/constants_colors.dart';
 
 class SubscriptionInfo extends StatelessWidget {
   const SubscriptionInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    final double containerHeight1 = size.height * 0.40;
-    final double containerHeight2 = size.height * 0.53;
+    final screenHeight = MediaQuery.sizeOf(context).height;
+    final screenWidth = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF1c1c23),
-      body: Stack(
-        children: [
-          SizedBox(
-            height: size.height,
-            width: size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildTopContainer(containerHeight1),
-                _buildBottomContainer(containerHeight2),
-              ],
+      backgroundColor: Constants.bgColors,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildTopContainer(screenHeight, screenWidth),
+                  _buildBottomContainer(screenHeight, screenWidth),
+                ],
+              ),
             ),
-          ),
-          DottedLineCirclesWidget(size: size),
-          // _buildDottedLine(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTopContainer(double height) {
-    return Container(
-      margin: const EdgeInsets.only(right: 20, left: 20, top: 40),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      height: height,
-      decoration: const BoxDecoration(
-        color: Color(0xFF3d3d47),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      child: const Column(
-        children: [
-          BuildHeader(),
-          SizedBox(height: 20),
-          LogoWidget(),
-          SizedBox(height: 15),
-          SubscriptionDetails()
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBottomContainer(double height) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      height: height,
-      decoration: const BoxDecoration(
-        color: Color(0xFF353542),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
-      ),
-      child: Column(
-        children: [
-          detailsInfoList(),
-          const SizedBox(height: 25),
-          CustomButtonWidget(
-            onTap: () {},
-            btnText: 'Save',
-            btnTextColor: Colors.white,
-            btnColor: const Color(0xFF3d3d47),
-          ),
-        ],
+            const DottedLineCirclesWidget()
+          ],
+        ),
       ),
     );
   }
 }
 
-Widget detailsInfoList() {
-  return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
-    height: 270,
-    width: double.infinity,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(16),
-      color: const Color(0xFF4E4E61),
+Widget _buildTopContainer(double height, double width) {
+  return Expanded(
+    child: Container(
+      // margin: const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(16),
+      height: height * 0.40,
+      width: width,
+      decoration: const BoxDecoration(
+        color: Color(0xFF353542),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      child: const SafeArea(
+        child: Column(
+          children: [
+            BuildHeader(),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 10),
+                  LogoWidget(),
+                  SubscriptionDetails()
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     ),
-    child: Column(
-      children: [
-        ListInfoWidget(title: 'Name', name: 'Spotify', tap: () {}),
-        ListInfoWidget(title: 'Description', name: 'Music app', tap: () {}),
-        ListInfoWidget(title: 'Category', name: 'Enterteintment', tap: () {}),
-        ListInfoWidget(title: 'First payment', name: '08.01.2022', tap: () {}),
-        ListInfoWidget(title: 'Reminder', name: 'Never', tap: () {}),
-        ListInfoWidget(title: 'Currency', name: 'USD (\$)', tap: () {}),
-      ],
+  );
+}
+
+Widget _buildBottomContainer(double height, double width) {
+  return Expanded(
+    child: Container(
+      // margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(16),
+
+      width: width,
+      decoration: const BoxDecoration(
+        color: Color(0xFF282833),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(child: detailsInfoList()),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: CustomButtonWidget(
+              onTap: () {},
+              btnText: 'Save',
+              btnTextColor: Colors.white,
+              btnColor: const Color(0xFF3d3d47),
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+Widget detailsInfoList() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: const Color(0xFF4E4E61),
+          ),
+          child: Column(
+            children: [
+              ListInfoWidget(title: 'Name', name: 'Spotify', onTap: () {}),
+              ListInfoWidget(
+                  title: 'Description', name: 'Music app', onTap: () {}),
+              ListInfoWidget(
+                  title: 'Category', name: 'Enterteintment', onTap: () {}),
+              ListInfoWidget(
+                  title: 'First payment', name: '08.01.2022', onTap: () {}),
+              ListInfoWidget(title: 'Reminder', name: 'Never', onTap: () {}),
+              ListInfoWidget(title: 'Currency', name: 'USD (\$)', onTap: () {}),
+            ],
+          ),
+        ),
+      ),
     ),
   );
 }

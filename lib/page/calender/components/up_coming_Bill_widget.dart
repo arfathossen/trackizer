@@ -11,19 +11,19 @@ class buildUpcomingBillsWidget extends StatefulWidget {
 
   @override
   State<buildUpcomingBillsWidget> createState() =>
-      _buildUpcomingBillsWidgetState();
+      _buildUpComingBillsWidgetState();
 }
 
-class _buildUpcomingBillsWidgetState extends State<buildUpcomingBillsWidget> {
+class _buildUpComingBillsWidgetState extends State<buildUpcomingBillsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20),
-      height: MediaQuery.sizeOf(context).height * 0.40,
+      height: MediaQuery.sizeOf(context).height * 0.45,
       width: double.infinity,
       child: GridView.builder(
         shrinkWrap: true,
-        scrollDirection: Axis.vertical,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: widget.arryList.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisSpacing: 16,
@@ -39,6 +39,7 @@ class _buildUpcomingBillsWidgetState extends State<buildUpcomingBillsWidget> {
               height: 170,
               width: 160,
               decoration: BoxDecoration(
+                  // color:Color(0xFF4E4E61),
                   color: Constants.ContainerColor,
                   borderRadius: BorderRadius.circular(16)),
               child: Column(

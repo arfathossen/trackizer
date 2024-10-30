@@ -10,7 +10,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(66, 36, 35, 35),
+      // backgroundColor: const Color.fromARGB(66, 36, 35, 35),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -99,33 +99,3 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
-
-// class LogoAvatarWidget extends StatelessWidget {
-//   const LogoAvatarWidget({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         Image.asset(
-//           'assets/images/Frame.png',
-//           height: 29,
-//           width: 29,
-//         ),
-//         const SizedBox(
-//           width: 5,
-//         ),
-//         const Center(
-//           child: Text(
-//             'TRACKIZER',
-//             style: TextStyle(
-//                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
-//           ),
-//         )
-//       ],
-//     );
-//   }
-// }

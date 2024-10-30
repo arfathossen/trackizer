@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:trackizer_app/components/costom_textfield.dart';
+import 'package:trackizer_app/components/title_logo_widget.dart';
 
-import 'package:trackizer_app/page/bottom_root/bottom_navbar_screen.dart';
+import 'package:trackizer_app/page/auth/sign_up/Components/forgot_passwoed_widget.dart';
 
-import '../../../../components/costom_textfield.dart';
-import '../../../../components/title_logo_widget.dart';
-import '../../../welcome_screen/components/custom_button.widget.dart';
-import 'difficulty_row_widget.dart';
+import 'package:trackizer_app/page/welcome_screen/components/custom_button.widget.dart';
 
-class SignInFormsWidget extends StatelessWidget {
-  const SignInFormsWidget({
+class SignUpFieldWidget extends StatelessWidget {
+  const SignUpFieldWidget({
     super.key,
   });
 
@@ -26,25 +25,15 @@ class SignInFormsWidget extends StatelessWidget {
         ),
         const CostomTextfield(
           obscureText: false,
-          title: 'E-mail address',
+          title: 'Login',
         ),
         const SizedBox(
           height: 10,
         ),
         const CostomTextfield(obscureText: true, title: 'Password'),
+        const ForgotPasswoedWidget(),
         const SizedBox(
-          height: 20,
-        ),
-        const DifficultyRowWidget(),
-        const SizedBox(
-          height: 20,
-        ),
-        const Text(
-          'Use 8 or more characters with a mix of letters, numbers & symbols.',
-          style: TextStyle(color: Colors.white30),
-        ),
-        const SizedBox(
-          height: 30,
+          height: 10,
         ),
         Container(
           decoration: BoxDecoration(
@@ -61,12 +50,12 @@ class SignInFormsWidget extends StatelessWidget {
           ),
           child: CustomButtonWidget(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BottomNavbarScreen()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => const));
               },
-              btnText: 'Get started, it’s free!',
+              btnText: 'Sign In',
               btnTextColor: Colors.white,
               btnColor: const Color(0xFFFF7966)),
         ),

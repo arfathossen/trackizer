@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:trackizer_app/page/home/components/active_subs_widget.dart';
 import 'package:trackizer_app/page/home/components/circle_progress_widget.dart';
 
-import 'dart:math' as math;
+// import 'dart:math' as math;
 
 class TopContainerWidget extends StatelessWidget {
   const TopContainerWidget({
@@ -13,10 +13,8 @@ class TopContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-      ),
-      height: MediaQuery.sizeOf(context).height * 0.55,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+      height: 400,
       width: double.infinity,
       decoration: BoxDecoration(
           gradient: const LinearGradient(
@@ -35,11 +33,11 @@ class TopContainerWidget extends StatelessWidget {
       child: const Column(
         children: [
           SizedBox(
-            height: 50,
+            height: 20,
           ),
           CircleProgressWidget(),
           SizedBox(
-            height: 25,
+            height: 10,
           ),
           ActiveSubswidget()
         ],

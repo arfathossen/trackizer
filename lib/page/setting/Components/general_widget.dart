@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:trackizer_app/page/setting/Components/profile_widget.dart';
@@ -18,8 +16,7 @@ class GeneralItemsWidget extends StatelessWidget {
       children: [
         Text(
           'General',
-          style:
-              TextStyle(color: Constants.secondaryColor, fontSize: 15),
+          style: TextStyle(color: Constants.secondaryColor, fontSize: 15),
         ),
         const SizedBox(
           height: 5,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trackizer_app/shared/constants_colors.dart';
 
-class UpcomingBills extends StatelessWidget {
-  UpcomingBills({super.key});
+class UpComingBills extends StatelessWidget {
+  UpComingBills({super.key});
   List arryList = [
     {
       'day': 'Jun',
@@ -103,15 +103,15 @@ class SubTile extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          _buildRowWidget(i: i)
+          buildRowWidget(i: i)
         ],
       ),
     );
   }
 }
 
-class _buildRowWidget extends StatelessWidget {
-  const _buildRowWidget({
+class buildRowWidget extends StatelessWidget {
+  const buildRowWidget({
     super.key,
     required this.i,
   });

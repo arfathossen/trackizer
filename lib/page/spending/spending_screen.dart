@@ -20,11 +20,11 @@ class _SpendingScreenState extends State<SpendingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1c1c23),
+      // backgroundColor: const Color(0xFF1c1c23),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Constants.bgColors,
+        // backgroundColor: Constants.bgColors,
         elevation: 0,
         title: Text(
           'Spending % Budgets',

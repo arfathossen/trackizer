@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trackizer_app/page/calender/calender_screen.dart';
+
 import 'package:trackizer_app/page/calender/components/bg_button_widget.dart';
 import 'package:trackizer_app/page/calender/components/my_button.dart';
 import 'package:trackizer_app/shared/constants_colors.dart';
@@ -34,10 +34,10 @@ class BuildSubscriptionScheduleWidgetState
       padding: const EdgeInsets.symmetric(
         horizontal: 15,
       ),
-      height: MediaQuery.sizeOf(context).height * 0.37,
+      height: MediaQuery.sizeOf(context).height * 0.38,
       width: double.infinity,
-      decoration: BoxDecoration(
-          gradient: const LinearGradient(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
             colors: [
               Color(0xFF282833),
               Color(0xFF282833),
@@ -46,45 +46,15 @@ class BuildSubscriptionScheduleWidgetState
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          color: Colors.grey[700],
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 15,
-          ),
+          const CalenderTitlecontaint(),
           SizedBox(
-            height: 80,
-            width: 184,
-            child: Text(
-              'Subs Schedule',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Constants.secondaryColor,
-                  fontSize: 30),
-            ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '3 subscriptions for today',
-                style: TextStyle(color: Constants.primaryColor, fontSize: 15),
-              ),
-              const MyButton()
-            ],
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          SizedBox(
-            height: 110,
+            height: MediaQuery.sizeOf(context).height * 0.15,
             width: double.infinity,
             child: ListView.builder(
               shrinkWrap: true,
@@ -103,11 +73,10 @@ class BuildSubscriptionScheduleWidgetState
                     child: Container(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 5, vertical: 15),
-                      height: 108,
                       width: 48,
                       decoration: BoxDecoration(
                           color: selectIndex == index
-                              ? Constants.ContainerColor
+                              ? const Color(0xFF4E4E61)
                               : Constants.bgColors,
                           borderRadius: BorderRadius.circular(16)),
                       child: Column(
@@ -138,6 +107,51 @@ class BuildSubscriptionScheduleWidgetState
           )
         ],
       ),
+    );
+  }
+}
+
+class CalenderTitlecontaint extends StatelessWidget {
+  const CalenderTitlecontaint({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 80,
+          width: 184,
+          child: Text(
+            'Subs Schedule',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Constants.secondaryColor,
+                fontSize: 30),
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '3 subscriptions for today',
+              style: TextStyle(color: Constants.primaryColor, fontSize: 15),
+            ),
+            const MyButton()
+          ],
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+      ],
     );
   }
 }

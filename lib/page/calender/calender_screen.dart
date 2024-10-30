@@ -1,9 +1,8 @@
-import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 import 'package:hugeicons/hugeicons.dart';
 import 'package:trackizer_app/page/calender/components/build_subscription_schedule_widget.dart';
-import 'package:trackizer_app/page/calender/components/my_button.dart';
+
 import 'package:trackizer_app/page/calender/components/up_coming_Bill_widget.dart';
 import 'package:trackizer_app/page/calender/components/up_coming_title_widget.dart';
 import 'package:trackizer_app/shared/constants_colors.dart';
@@ -51,11 +50,11 @@ class _CalenderScreenState extends State<CalenderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.bgColors,
+      // backgroundColor: Constants.bgColors,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: Constants.bgColors,
+        backgroundColor: Constants.ContainerColor,
         elevation: 0,
         title: Text(
           'Calendar',
@@ -79,11 +78,8 @@ class _CalenderScreenState extends State<CalenderScreen> {
             const BuildSubscriptionScheduleWidget(
               calenderArr: [],
             ),
-            const SizedBox(
-              height: 15,
-            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Column(
                 children: [
                   const UpComingTitleWidget(),

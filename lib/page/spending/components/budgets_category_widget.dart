@@ -31,59 +31,55 @@ class BudgetsCategoryItemsWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Row(
-                  children: [
-                    HugeIcon(
-                      icon: icon,
-                      // icon: HugeIcons.strokeRoundedCar01,
-                      size: 32,
-                      color: Constants.primaryColor,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          plantName,
-                          style: TextStyle(
-                              color: Constants.secondaryColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 15),
-                        ),
-                        Text(
-                          title,
-                          style: TextStyle(
-                              color: Constants.primaryColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+              Row(
+                children: [
+                  HugeIcon(
+                    icon: icon,
+                    // icon: HugeIcons.strokeRoundedCar01,
+                    size: 32,
+                    color: Constants.primaryColor,
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        plantName,
+                        style: TextStyle(
+                            color: Constants.secondaryColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15),
+                      ),
+                      Text(
+                        title,
+                        style: TextStyle(
+                            color: Constants.primaryColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12),
+                      )
+                    ],
+                  ),
+                ],
               ),
-              Container(
-                child: Column(
-                  children: [
-                    Text(
-                      price,
-                      style: TextStyle(
-                          color: Constants.secondaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15),
-                    ),
-                    Text(
-                      sub,
-                      style: TextStyle(
-                          color: Constants.primaryColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12),
-                    )
-                  ],
-                ),
+              Column(
+                children: [
+                  Text(
+                    price,
+                    style: TextStyle(
+                        color: Constants.secondaryColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15),
+                  ),
+                  Text(
+                    sub,
+                    style: TextStyle(
+                        color: Constants.primaryColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12),
+                  )
+                ],
               )
             ],
           ),

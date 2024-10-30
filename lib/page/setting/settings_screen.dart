@@ -19,10 +19,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.bgColors,
+      // backgroundColor: Constants.bgColors,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Constants.bgColors,
+        // backgroundColor: Constants.bgColors,
         elevation: 0,
         title: Text(
           'Credit Cards',

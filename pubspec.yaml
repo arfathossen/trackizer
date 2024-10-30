@@ -43,6 +43,7 @@ dependencies:
   dotted_decoration: ^2.0.0
   gauge_indicator: ^0.4.3
   google_fonts: ^6.2.1
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:

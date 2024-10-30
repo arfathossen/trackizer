@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gauge_indicator/gauge_indicator.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:trackizer_app/page/setting/settings_screen.dart';
 import 'package:trackizer_app/shared/constants_colors.dart';
 
 class CircleProgressWidget extends StatelessWidget {
@@ -51,7 +52,7 @@ class CircleProgressWidget extends StatelessWidget {
               child: MainCircleItemsWidget(),
             ),
           ),
-          const _CircleSmallButton(),
+          const _CircleSettingIcon(),
         ],
       ),
     );
@@ -134,6 +135,9 @@ class MainCircleItemsWidget extends StatelessWidget {
               height: 15,
             ),
             const CircleLogo(),
+            const SizedBox(
+              height: 5,
+            ),
             Text(
               '\$1,235',
               style: TextStyle(
@@ -142,7 +146,7 @@ class MainCircleItemsWidget extends StatelessWidget {
                   fontSize: 30),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
             Text(
               'This month bills',
@@ -152,26 +156,37 @@ class MainCircleItemsWidget extends StatelessWidget {
                   fontSize: 12),
             ),
             const SizedBox(
-              height: 25,
+              height: 20,
             ),
-            Container(
-              height: 32,
-              width: 100,
-              decoration: BoxDecoration(
-                  color: const Color(0xFF4E4E61),
-                  borderRadius: BorderRadius.circular(16)),
-              child: Center(
-                child: Text(
-                  'See your budget',
-                  style: TextStyle(
-                      color: Constants.secondaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 8),
-                ),
-              ),
-            ),
+            const _CircleButtonWidget(),
           ],
         ));
+  }
+}
+
+class _CircleButtonWidget extends StatelessWidget {
+  const _CircleButtonWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 32,
+      width: 100,
+      decoration: BoxDecoration(
+          color: const Color(0xFF4E4E61),
+          borderRadius: BorderRadius.circular(16)),
+      child: Center(
+        child: Text(
+          'See your budget',
+          style: TextStyle(
+              color: Constants.secondaryColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 8),
+        ),
+      ),
+    );
   }
 }
 
@@ -213,8 +228,8 @@ class CircleLogo extends StatelessWidget {
   }
 }
 
-class _CircleSmallButton extends StatelessWidget {
-  const _CircleSmallButton({
+class _CircleSettingIcon extends StatelessWidget {
+  const _CircleSettingIcon({
     super.key,
   });
 
@@ -223,10 +238,16 @@ class _CircleSmallButton extends StatelessWidget {
     return Positioned(
       top: 10,
       right: 0,
-      child: HugeIcon(
-        icon: HugeIcons.strokeRoundedSetting07,
-        size: 24,
-        color: Constants.primaryColor,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SettingsScreen()));
+        },
+        child: HugeIcon(
+          icon: HugeIcons.strokeRoundedSetting07,
+          size: 24,
+          color: Constants.primaryColor,
+        ),
       ),
     );
   }

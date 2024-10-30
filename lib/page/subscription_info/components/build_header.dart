@@ -10,10 +10,15 @@ class BuildHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        HugeIcon(
-          icon: HugeIcons.strokeRoundedArrowDown01,
-          size: 24,
-          color: Constants.primaryColor,
+        InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: HugeIcon(
+            icon: HugeIcons.strokeRoundedArrowDown01,
+            size: 24,
+            color: Constants.primaryColor,
+          ),
         ),
         Text(
           'Subscription info',
